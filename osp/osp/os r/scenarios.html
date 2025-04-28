@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deadlock Scenarios - DeadlockAI</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">DeadlockAI</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="simulation.html">Simulation</a></li>
+        <li><a href="bankers-algorithm.html">Banker's Algorithm</a></li>
+        <li><a href="scenarios.html" class="active">Dummy Scenarios</a></li>
+        <li><a href="about-ai.html">About AI</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="scenarios-container">
+      <h1>Common Deadlock Scenarios</h1>
+      <p>Explore these pre-configured scenarios to understand different types of deadlocks and their solutions.</p>
+
+      <div class="scenario-cards">
+        <div class="scenario-card">
+          <div class="scenario-header">
+            <h3>Dining Philosophers</h3>
+          </div>
+          <div class="scenario-body">
+            <p>Five philosophers sitting at a round table with five forks, each needing two forks to eat.</p>
+            <ul>
+              <li>5 Processes (Philosophers)</li>
+              <li>5 Resources (Forks)</li>
+              <li>Circular Wait Condition</li>
+            </ul>
+          </div>
+          <div class="scenario-footer">
+            <button class="btn primary" data-scenario="dining-philosophers">Load Scenario</button>
+          </div>
+        </div>
+
+        <div class="scenario-card">
+          <div class="scenario-header">
+            <h3>Resource Hierarchy</h3>
+          </div>
+          <div class="scenario-body">
+            <p>Multiple processes requesting resources in different orders, leading to circular dependencies.</p>
+            <ul>
+              <li>4 Processes</li>
+              <li>4 Resources</li>
+              <li>No Resource Ordering</li>
+            </ul>
+          </div>
+          <div class="scenario-footer">
+            <button class="btn primary" data-scenario="resource-hierarchy">Load Scenario</button>
+          </div>
+        </div>
+
+        <div class="scenario-card">
+          <div class="scenario-header">
+            <h3>Producer-Consumer</h3>
+          </div>
+          <div class="scenario-body">
+            <p>Multiple producers and consumers sharing a fixed-size buffer, demonstrating buffer deadlock.</p>
+            <ul>
+              <li>3 Producers</li>
+              <li>3 Consumers</li>
+              <li>Limited Buffer Size</li>
+            </ul>
+          </div>
+          <div class="scenario-footer">
+            <button class="btn primary" data-scenario="producer-consumer">Load Scenario</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="scenario-details">
+        <h2>Selected Scenario Details</h2>
+        <div id="scenario-visualization" class="visualization-area">
+          <p>Select a scenario to view its details and simulation</p>
+        </div>
+
+        <div class="scenario-description">
+          <h3>Problem Description</h3>
+          <p id="scenario-problem">Choose a scenario from above to see its detailed description.</p>
+
+          <h3>Solution Approaches</h3>
+          <ul id="solution-approaches">
+            <li>Prevention techniques</li>
+            <li>Avoidance strategies</li>
+            <li>Detection methods</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">DeadlockAI</div>
+      <p>An educational tool for understanding deadlocks in operating systems</p>
+      <p>&copy; 2025 DeadlockAI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./scripts/scenarios.js"></script>
+</body>
+</html>

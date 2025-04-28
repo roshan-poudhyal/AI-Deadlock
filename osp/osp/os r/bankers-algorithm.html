@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banker's Algorithm - DeadlockAI</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/cyberpunk.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">DeadlockAI</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="simulation.html">Simulation</a></li>
+        <li><a href="bankers-algorithm.html" class="active">Banker's Algorithm</a></li>
+        <li><a href="scenarios.html">Dummy Scenarios</a></li>
+        <li><a href="about-ai.html">About AI</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="bankers-container">
+      <h1>Banker's Algorithm</h1>
+      
+      <div class="algorithm-explanation">
+        <h2>What is Banker's Algorithm?</h2>
+        <p>
+          The Banker's Algorithm is a resource allocation and deadlock avoidance algorithm 
+          developed by Edsger Dijkstra. It tests for safety by simulating the allocation of 
+          predetermined maximum possible amounts of all resources, and then checks if allocation 
+          requests can be satisfied with the available resources.
+        </p>
+        <p>
+          The algorithm gets its name from the banking system where a bank never allocates 
+          available cash in such a way that it can no longer satisfy the needs of all its customers.
+        </p>
+
+        <h2>How it Works</h2>
+        <p>The Banker's Algorithm uses the following data structures:</p>
+        <ul>
+          <li><strong>Available:</strong> Vector of length m indicating available resources</li>
+          <li><strong>Max:</strong> n×m matrix defining maximum demand of each process</li>
+          <li><strong>Allocation:</strong> n×m matrix defining resources currently allocated to each process</li>
+          <li><strong>Need:</strong> n×m matrix indicating remaining resource needs of each process</li>
+        </ul>
+
+        <h3>Safety Algorithm</h3>
+        <ol>
+          <li>Let Work and Finish be vectors of length m and n respectively.</li>
+          <li>Initialize Work = Available and Finish[i] = false for all i.</li>
+          <li>Find an i such that both Finish[i] = false and Need<sub>i</sub> ≤ Work. If no such i exists, go to step 5.</li>
+          <li>Work = Work + Allocation<sub>i</sub> and Finish[i] = true. Go to step 3.</li>
+          <li>If Finish[i] = true for all i, then the system is in a safe state.</li>
+        </ol>
+      </div>
+
+      <div class="bankers-demo">
+        <h2>Banker's Algorithm Demonstration</h2>
+        <div class="input-section">
+          <div class="control-group">
+            <label for="bankers-processes">Number of Processes:</label>
+            <input type="number" id="bankers-processes" min="1" max="10" value="5">
+          </div>
+          <div class="control-group">
+            <label for="bankers-resources">Number of Resource Types:</label>
+            <input type="number" id="bankers-resources" min="1" max="10" value="3">
+          </div>
+          <button class="btn primary" id="initialize-bankers">Initialize Matrices</button>
+        </div>
+
+        <div id="bankers-matrices" class="matrices-container">
+          <!-- Matrices will be generated here -->
+        </div>
+
+        <div class="bankers-actions">
+          <button class="btn primary" id="check-safety">Check System Safety</button>
+          <button class="btn secondary" id="reset-bankers">Reset</button>
+        </div>
+
+        <div id="safety-result" class="result-status">
+          <h3>Safety Analysis Result</h3>
+          <p>Configure the system and check safety to see results.</p>
+        </div>
+
+        <div id="safe-sequence" class="safe-sequence-container">
+          <!-- Safe sequence will be displayed here -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">DeadlockAI</div>
+      <p>An educational tool for understanding deadlocks in operating systems</p>
+      <p>&copy; 2025 DeadlockAI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./scripts/bankers-algorithm.js"></script>
+</body>
+</html>

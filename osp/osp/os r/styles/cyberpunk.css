@@ -1,0 +1,87 @@
+:root {
+  --neon-blue: #00f3ff;
+  --neon-pink: #ff00ff;
+  --neon-purple: #b026ff;
+  --neon-green: #0fff50;
+  --dark-bg: #0a0a0f;
+  --grid-color: rgba(0, 243, 255, 0.1);
+}
+
+/* Resource Graph Cyberpunk Theme */
+#resource-graph svg,
+#allocation-graph svg {
+  background-color: var(--dark-bg);
+  background-image: linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+  border: 1px solid var(--neon-blue);
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+}
+
+/* Nodes */
+.node circle {
+  fill: var(--dark-bg);
+  stroke: var(--neon-blue);
+  stroke-width: 2px;
+  filter: drop-shadow(0 0 5px var(--neon-blue));
+  transition: all 0.3s ease;
+}
+
+.node.process circle {
+  stroke: var(--neon-pink);
+  filter: drop-shadow(0 0 5px var(--neon-pink));
+}
+
+.node.resource circle {
+  stroke: var(--neon-green);
+  filter: drop-shadow(0 0 5px var(--neon-green));
+}
+
+.node text {
+  fill: white;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  text-shadow: 0 0 5px var(--neon-blue);
+}
+
+.node.process text {
+  text-shadow: 0 0 5px var(--neon-pink);
+}
+
+.node.resource text {
+  text-shadow: 0 0 5px var(--neon-green);
+}
+
+/* Links */
+.link {
+  stroke: var(--neon-purple);
+  stroke-width: 2px;
+  filter: drop-shadow(0 0 3px var(--neon-purple));
+  animation: neonPulse 2s infinite;
+}
+
+.link.request {
+  stroke-dasharray: 5, 5;
+}
+
+/* Animations */
+@keyframes neonPulse {
+  0% { opacity: 0.7; }
+  50% { opacity: 1; }
+  100% { opacity: 0.7; }
+}
+
+.node circle:hover {
+  stroke-width: 3px;
+  filter: drop-shadow(0 0 10px var(--neon-blue));
+  transform: scale(1.1);
+}
+
+.node.process circle:hover {
+  filter: drop-shadow(0 0 10px var(--neon-pink));
+}
+
+.node.resource circle:hover {
+  filter: drop-shadow(0 0 10px var(--neon-green));
+}

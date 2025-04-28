@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI-powered Deadlock Detection System</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">DeadlockAI</div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="simulation.html">Simulation</a></li>
+        <li><a href="bankers-algorithm.html">Banker's Algorithm</a></li>
+        <li><a href="scenarios.html">Dummy Scenarios</a></li>
+        <li><a href="about-ai.html">About AI</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>AI-powered Deadlock Detection</h1>
+        <p>Understand, simulate, and resolve computer science deadlock scenarios with the help of artificial intelligence.</p>
+        <div class="cta-buttons">
+          <a href="simulation.html" class="btn primary">Start Simulation</a>
+          <a href="about-ai.html" class="btn secondary">Learn More</a>
+        </div>
+      </div>
+      <div class="hero-animation" id="hero-animation">
+        <!-- D3.js animation will be rendered here -->
+      </div>
+    </section>
+
+    <section class="features">
+      <h2>What is a Deadlock?</h2>
+      <div class="feature-container">
+        <div class="feature-card">
+          <div class="feature-icon" id="deadlock-animation"></div>
+          <h3>Deadlock Definition</h3>
+          <p>A deadlock is a situation where a set of processes are blocked because each process is holding a resource and waiting to acquire a resource held by another process.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" id="conditions-animation"></div>
+          <h3>Four Conditions</h3>
+          <p>Mutual Exclusion, Hold and Wait, No Preemption, and Circular Wait are the four necessary conditions for a deadlock to occur.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" id="detection-animation"></div>
+          <h3>AI Detection</h3>
+          <p>Our AI system uses advanced algorithms to detect potential deadlocks and suggest optimal solutions to prevent or resolve them.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Configure Resources</h3>
+          <p>Set up your system with processes and resources to simulate real-world scenarios.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Run Simulation</h3>
+          <p>Execute the simulation to see how processes interact with resources over time.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>AI Analysis</h3>
+          <p>Our AI analyzes the system state and identifies potential or existing deadlocks.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">4</div>
+          <h3>Get Solutions</h3>
+          <p>Receive intelligent suggestions on how to resolve or prevent deadlock situations.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">DeadlockAI</div>
+      <p>An educational tool for understanding deadlocks in operating systems</p>
+      <p>&copy; 2025 DeadlockAI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./scripts/animations.js"></script>
+  <script src="./scripts/home.js"></script>
+</body>
+</html>

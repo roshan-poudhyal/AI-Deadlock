@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deadlock Simulation - DeadlockAI</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/cyberpunk.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">DeadlockAI</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="simulation.html" class="active">Simulation</a></li>
+        <li><a href="bankers-algorithm.html">Banker's Algorithm</a></li>
+        <li><a href="scenarios.html">Dummy Scenarios</a></li>
+        <li><a href="about-ai.html">About AI</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="simulation-container">
+      <h1>Deadlock Simulation</h1>
+      <p>Configure your system resources and processes to simulate deadlock scenarios.</p>
+
+      <div class="simulation-controls">
+        <div class="control-group">
+          <label for="processes">Number of Processes:</label>
+          <input type="number" id="processes" min="1" max="10" value="5">
+        </div>
+
+        <div class="control-group">
+          <label for="resources">Number of Resources:</label>
+          <input type="number" id="resources" min="1" max="10" value="3">
+        </div>
+
+        <div class="control-group">
+          <label for="simulation-speed">Simulation Speed:</label>
+          <select id="simulation-speed">
+            <option value="slow">Slow</option>
+            <option value="medium" selected>Medium</option>
+            <option value="fast">Fast</option>
+          </select>
+        </div>
+
+        <button class="btn primary" id="initialize-matrices">Initialize Matrices</button>
+      </div>
+
+      <div class="simulation-actions">
+        <button class="btn primary" id="start-simulation">Start Simulation</button>
+        <button class="btn secondary" id="reset-simulation">Reset</button>
+      </div>
+
+      <div id="matrices-container" class="matrices-container">
+        <!-- Matrices will be generated here -->
+      </div>
+
+      <div class="visualization-area">
+        <h2>Resource Allocation Graph</h2>
+        <div id="resource-graph"></div>
+      </div>
+
+      <div class="ai-analysis">
+        <h2>AI Analysis</h2>
+        <div id="ai-suggestions" class="ai-suggestions">
+          <p>Configure the system and start the simulation to receive AI analysis.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">DeadlockAI</div>
+      <p>An educational tool for understanding deadlocks in operating systems</p>
+      <p>&copy; 2025 DeadlockAI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="./scripts/simulation.js"></script>
+</body>
+</html>
