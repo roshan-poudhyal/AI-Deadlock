@@ -42,29 +42,13 @@ It enhances traditional deadlock detection by integrating ML models and graph-ba
    ```bash
    git clone https://github.com/roshan-poudhyal/AI-Deadlock.git
    cd AI-Deadlock
-Create a Virtual Environment (Optional but Recommended)
 
-bash
-Copy
-Edit
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-Install the Requirements
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
 Run the Project
 
-bash
-Copy
-Edit
+
 python main.py
 📂 Project Structure
-plaintext
-Copy
-Edit
+
 AI-Deadlock/
 ├── data/                 # Dataset for training/testing
 ├── models/               # Saved machine learning models
@@ -72,26 +56,10 @@ AI-Deadlock/
 ├── main.py               # Main executable script
 ├── requirements.txt      # Python dependencies
 └── README.md             # Project documentation
-📊 Deadlock Detection Example
-Sample visualization of processes and resources in a deadlock state using NetworkX graphs:
 
-python
-Copy
-Edit
-import networkx as nx
-import matplotlib.pyplot as plt
 
-G = nx.DiGraph()
-G.add_edges_from([('P1', 'R1'), ('R1', 'P2'), ('P2', 'R2'), ('R2', 'P1')])
 
-nx.draw(G, with_labels=True, node_color='lightblue', node_size=2000, arrows=True)
-plt.show()
-🧠 Future Improvements
-Integration with real-time operating systems
 
-Use of deep learning models for advanced prediction
-
-Web-based monitoring dashboard
 
 🤝 Contributing
 Contributions, issues, and feature requests are welcome!
